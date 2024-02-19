@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pacientes</title>
+</head>
+<body>
+    <center><h1>Pacientes en la enfermería</h1></center>
+    <table  width="100%" height="100%">
+        <tr>
+            <td><strong>Nombre</strong></td>
+            <td><strong>Apellidos</strong></td>
+            <td><strong>Edad</strong></td>
+            <td><strong>Sexo</strong></td>
+            <td><strong>Fecha de ingreso</strong></td>
+            <td><strong>Especialidad</strong></td>
+            <td><strong>Enfermedad</strong></td>
+        </tr>
+        {%for i in lista_de_pacientes:%}
+            {%if i.activo  %}
+                <div class="row">
+                    <tr>
+                        <td>{{i.nombre}}</td>
+                        <td>{{i.apellidos}}</td>
+                        <td>{{i.edad}}</td>
+                        <td>{{i.sexo}}</td>
+                        <td>{{i.fecha_ingreso}}</td>
+                        <td>{{i.especialidad}}</td>
+                        <td>{{i.enfermedad}}</td>
+                        <td><a href="/borrar-paciente/{{i.id_paciente}}" class="btn btn-primary btn-lg btn-block">Borrar</a></td>
+                        <td><a href="/editar-paciente/{{i.id_paciente}}" class="btn btn-primary btn-lg btn-block">Editar</a></td>
+                    </tr>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </table>
+
+    <div class="row">
+        <div class="col-5 px-5">
+            <a href="/"method="post">
+                <button type="button"  class="btn btn-primary btn-lg btn-block">Formulario</button>
+            </a>
+        </div>
+
+        <div class="col-2 px-5">
+            <a href="/altas"method="post">
+                <button type="button"  class="btn btn-primary btn-lg btn-block col-6">Altas</button>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>

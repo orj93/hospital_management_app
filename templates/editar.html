@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar paciente</title>
+</head>
+<body>
+
+    <form action="/editar-paciente" method="post">
+        <div class="input-group">
+            <input type="hidden" name="contenido_id_paciente" class="form-control" value={{id_paciente}}>
+            <input type="text" name="contenido_nombre" placeholder="Nombre" class="form-control" autofocus>
+            <input type="text" name="contenido_apellidos" placeholder="Apellidos" class="form-control" autofocus>
+            <input type="text" name="contenido_especialidad" placeholder="Especialidad" class="form-control" autofocus>
+            <input type="text" name="contenido_enfermedad" placeholder="Enfermedad" class="form-control" autofocus>
+            <input type="text" name="contenido_edad" placeholder="Edad" class="form-control" autofocus>
+            <input type="text" name="contenido_sexo" placeholder="Sexo" class="form-control" autofocus>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+    </form>
+
+</body>
+</html>
